@@ -98,15 +98,6 @@ def run_mrz(image_list, path_to_image_directory):
             print("Couldn't Process / Not A Passport")
             continue
         data = mrz.to_dict()
-        print("\nOriginal Raw Text:\n" + data["raw_text"] + "\n")
-        index_of_p = data["raw_text"].find("P<")
-        # # Check if "P<" is found
-        # if index_of_p != -1:
-        #     # Extract the substring starting from the first occurrence of "P<"
-        #     data["raw_text"] = data["raw_text"][index_of_p:]
-        #     print("Edited Raw Text -\n" + data["raw_text"] + "\n")
-        # else:
-        #     print("Couldn't locate P<\n")
         # Now select relevant fields
         country = data["country"].strip("<")
         print("Country - " + country)
