@@ -1,6 +1,6 @@
 import os
 import cv2
-import functions.py
+from functions import run_mrz
 
 def process_directory(full_path_to_directory):
     image_names = []
@@ -13,6 +13,7 @@ def process_directory(full_path_to_directory):
     print("-"*50)
     print("Found {} images in the given directory".format(num_images))
     print("-"*50)
+    process_list_of_image_names(image_names, full_path_to_directory)
 
 def process_list_of_image_names(image_names, full_path_to_image_directory):
-    pass
+    run_mrz(image_names, full_path_to_image_directory)
