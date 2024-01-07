@@ -12,10 +12,14 @@ def process_directory(full_path_to_directory):
             num_images = num_images + 1
     if num_images is 0:
         print("Found 0 images in the given directory \nQuitting ...")
-    print("-"*50)
-    print("Found {} images in the given directory".format(num_images))
-    print("-"*50)
-    process_list_of_image_names(image_names, full_path_to_directory)
+    else:
+        print("-"*50)
+        print("Found {} images in the given directory".format(num_images))
+        print("-"*50)
+        process_list_of_image_names(image_names, full_path_to_directory)
 
 def process_list_of_image_names(image_names, full_path_to_image_directory):
-    run_mrz(image_names, full_path_to_image_directory)
+    if len(image_names) is 0:
+        print("Given list of image names is empty \nQuitting ...")
+    else:
+        run_mrz(image_names, full_path_to_image_directory)
