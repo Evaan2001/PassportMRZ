@@ -90,8 +90,9 @@ def run_mrz(image_list, path_to_image_directory):
 
     for image_name in image_list:
         full_path = path_to_image_directory + image_name
+        print("\n------------------")
+        print('For "' + image_name + '"')
         print("\n------------------\n")
-        print('For image "' + image_name + '"')
         # Get all possible data
         mrz = read_mrz(full_path)
         if mrz is None:
@@ -111,15 +112,14 @@ def run_mrz(image_list, path_to_image_directory):
         print("Sex - " + sex)
         first_name = data["names"].strip("<")
         surname = data["surname"].strip("<")
-        print("Original Names ->" + "\n\t" + first_name + ".\n\t" + surname + ".")
         first_name = preliminary_correction(first_name)
         surname = preliminary_correction(surname)
         print(
-            "Preliminary Correction ->" + "\n\t" + first_name + ".\n\t" + surname + "."
+            "Extracted Names With Some Custom Autocorrect ->" + "\n\t" + first_name + ".\n\t" + surname + "."
         )
         first_name = advanced_correction(first_name)
         surname = advanced_correction(surname)
-        print("Advanced Correction ->" + "\n\t" + first_name + ".\n\t" + surname + ".")
+        print("After Advanced Autocorrect ->" + "\n\t" + first_name + ".\n\t" + surname + ".")
 
 
 if __name__ == "__main__":
