@@ -10,6 +10,8 @@ def process_directory(full_path_to_directory):
         if img is not None:
             image_names.append(filename)
             num_images = num_images + 1
+    if num_images is 0:
+        print("Found 0 images in the given directory \nQuitting ...")
     print("-"*50)
     print("Found {} images in the given directory".format(num_images))
     print("-"*50)
