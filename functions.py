@@ -92,7 +92,7 @@ def run_mrz(image_list, path_to_image_directory):
         full_path = path_to_image_directory + image_name
         print("\n------------------")
         print('For "' + image_name + '"')
-        print("\n------------------\n")
+        print("------------------\n")
         # Get all possible data
         mrz = read_mrz(full_path)
         if mrz is None:
